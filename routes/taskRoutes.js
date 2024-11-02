@@ -1,7 +1,7 @@
 const taskRoutes = (req , res) =>{
-    if(req.method = 'GET') {
+     if(req.method = 'GET') {
         getTasksASKS(req, res);
-    } else if(req.method == 'POST') {
+    } else if(req.method = 'POST') {
         createTaskTask(req, res)
     } else if(req.method = 'PATCH') {
         updateTask(req, res)
@@ -15,3 +15,4 @@ const taskRoutes = (req , res) =>{
     }
 
 }
+module.exports = taskRoutes;
