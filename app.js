@@ -1,14 +1,14 @@
-const http = requere('http');
-const taskRoutes = require("../routes/taskRoutes");
+const http = require('http');
 
 const HOSTNAME = 'localHost'
 const PORT = 9000
 
-const server = http.createServer((res, res) =>{
+
+const server = http.createServer((req, res) =>{
     if (req.url.startWith('/tasks')) {
         taskRoutes(req, res)
     } else {
-        res.writeHead(404, 'not found', {'content-type': 'application/json'})
+        res.writeHead(404, 'not found', {'content-type':    'application/json '})
         res.end(json.stringify({
             message: 'sorry, you got lost!' 
         }))
