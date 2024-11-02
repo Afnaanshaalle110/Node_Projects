@@ -1,7 +1,6 @@
 const {IncomingForm} = require('formidable');
-const { readTasksFromFile, writeTasksTofile } = require("../utils/fileHandler")
-const {copyfilesync} = require('fs');
-
+const { readTasksFromFile, writeTasksTofile } = require("../utils/fileHandler");
+const {copyfilesync, } = require('fs');
 
 exports.getTasks = (req, res) => {
     const tasks =  readTasksFromFile();
@@ -33,7 +32,7 @@ exports.createTask = (req, res) => {
         tasks.push(newTask);
         writeTasksTofile(tasks);
         if(files.image) {
-            copyFileSync(files.image.path, path.join(__dirname,'../uploads', files.image.name))
+            copyfilesync(files.image.path, path.join(__dirname,'../uploads', files.image.name))
             res.end(JSON.stringify(newTask))
         }
 
@@ -41,14 +40,14 @@ exports.createTask = (req, res) => {
 
 
 }
-exports.updateTask = (req, res) => {
+exports.updateTask = (_req, res) => {
     res.end(JSON.stringify({
         message: 'not yet implemented'
 
     }))
 }
 
-exports.deleteTask = (req, res) => {
+exports.deleteTask = (_req, res) => {
     res.end(JSON.stringify({
         message: 'not yet implemented'
         
