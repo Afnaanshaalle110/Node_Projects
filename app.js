@@ -6,7 +6,7 @@ const PORT = 9000
 
 const server = http.createServer((res, res) =>{
     if (req.url.startWith('/tasks')) {
-        taskRoutestes(req, res)
+        taskRoutes(req, res)
     } else {
         res.writeHead(404, 'not found', {'content-type': 'application/json'})
         res.end(json.stringify({
