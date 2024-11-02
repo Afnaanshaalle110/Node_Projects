@@ -8,7 +8,7 @@ exports.writeTasksTofile = (tasks) => {
 }
 exports.readTasksFromFile = () => {
     if(!fs.existsSync(filePath)) {
-        writeTasksTofile([])
+        this.writeTasksTofile([])
     }
 
     const data = fs.readFileSync(filePath);
