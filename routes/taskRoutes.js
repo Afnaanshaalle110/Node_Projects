@@ -1,8 +1,8 @@
 const taskRoutes = (req , res) =>{
      if(req.method = 'GET') {
-        getTasksASKS(req, res);
+        getTasks(req, res);
     } else if(req.method = 'POST') {
-        createTaskTask(req, res)
+        createTask(req, res)
     } else if(req.method = 'PATCH') {
         updateTask(req, res)
     } else if(req.method = 'DELETE') {
