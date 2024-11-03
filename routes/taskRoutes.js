@@ -1,13 +1,13 @@
 const { getTasks, createTask } = require("../controllers/taskControllers");
 
 const taskRoutes = (req , res) =>{
-     if(req.method = 'GET') {
+     if(req.method === 'GET') {
         getTasks(req, res);
-    } else if(req.method = 'POST') {
+    } else if(req.method === 'POST') {
         createTask(req, res)
-     } else if(req.method = 'PATCH') {
+     } else if(req.method === 'PATCH') {
         updateTask(req, res)
-    } else if(req.method = 'DELETE') {
+    } else if(req.method === 'DELETE') {
         deleteTask(req, res)
     } else {
         res.writeHead(404, 'data not found', {'content-type': 'application/json'})
